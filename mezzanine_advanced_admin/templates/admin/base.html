@@ -15,6 +15,7 @@
     <link href="{% static "bootstrap-rtl/css/bootstrap-rtl.min.css" %}" rel="stylesheet"/>
     <link href="{% static "bootstrap-rtl/css/bootstrap-flipped.min.css" %}" rel="stylesheet"/>
     {% endif %}
+    <link href="{% static "datepicker/bootstrap-datetimepicker.min.css" %}" rel="stylesheet"/>
 
     <script type="text/javascript">
     //<![CDATA[
@@ -39,7 +40,9 @@
     </script>
     <script src="{% static "admin/js/jquery.min.js" %}"></script>
     <script src="{% static "admin/js/jquery-migrate-1.2.1.min.js" %}"></script>
+    <script src="{% static "datepicker/moment.js" %}"></script>
     <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "datepicker/bootstrap-datetimepicker.min.js" %}"></script>
 
     {% block extrahead %}{% endblock %}
 
@@ -50,6 +53,9 @@
                 $(document).ready(function() {
                     $('input[type="submit"]').addClass('btn');
                     $('[title]').tooltip();
+                    $('.datetimeshortcuts').remove();
+                    $('.vDateField').datetimepicker();
+                    $('.vDateField').datetimepicker();
                 });
             }(jQuery));
     //]]>
